@@ -21,6 +21,6 @@ workflows:
       - name: Grant execute permission
         script: chmod +x ./gradlew
       - name: Build Debug APK
-        script: ./gradlew assembleDebug
+        script: ./gradlew assembleDebug -PversionName="0.1.0"
     artifacts:
       - app/build/outputs/apk/debug/*.apk
