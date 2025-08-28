@@ -4,11 +4,6 @@ workflows:
     instance_type: linux_x2
     max_build_duration: 60
     environment:
-      android:
-        build_tools_version: "33.0.2"
-        compile_sdk_version: 33
-        target_sdk_version: 33
-        ndk: r21d
       java: 21
     cache:
       cache_paths:
@@ -25,7 +20,7 @@ workflows:
     scripts:
       - name: Grant execute permission
         script: chmod +x ./gradlew
-      - name: Build APK
+      - name: Build Debug APK
         script: ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/*.apk
